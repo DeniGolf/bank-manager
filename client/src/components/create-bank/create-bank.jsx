@@ -42,7 +42,7 @@ export default function CreateBank({ fetchBanks }) {
     event.preventDefault();
 
     setErrors({});
-
+    
     const errors = {};
 
     if (!bankInput.name) {

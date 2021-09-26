@@ -49,6 +49,8 @@ export default function BankCard({ bank, handleDelete, fetchBanks }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    setErrors({});
+    
     const errors = {};
 
     if (!bankInput.name) {
