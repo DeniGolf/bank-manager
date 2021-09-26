@@ -16,7 +16,9 @@ if (process.env.NODE_ENV === "production") {
 routes(app);
 
 app.use("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
+  let url = path.join(__dirname, "/client/build", "index.html");
+  if (!url.startsWith("/app/")) url = url.substring(1);
+  res.sendFile(url);
 });
 
 app.listen(PORT, () => console.log(`server started on port ${PORT}`));
